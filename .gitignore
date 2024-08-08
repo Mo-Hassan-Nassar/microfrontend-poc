@@ -1,0 +1,7 @@
+host/node_modules
+remote/node_modules
+remote/public
+remote/public/assets
+remote/.vscode
+host/.vscode
+.idea
