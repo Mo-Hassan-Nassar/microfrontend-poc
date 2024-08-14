@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
+import useCounterStore from '../store/useCounterStore.ts'
 
+defineProps<{ msg: string }>();
 
-import 'vuetify/styles'
+const counterStore = useCounterStore();
 
-
-defineProps<{ msg: string }>()
 </script>
 
 <template>
@@ -15,7 +15,8 @@ defineProps<{ msg: string }>()
       <p class="read-the-docs">
         Click on the Vite and Vue logos to learn more
       </p>
-      <v-btn color="primary">Vuetify Button</v-btn>
+      <v-btn color="primary" @click="counterStore.increment">Increment Counter</v-btn>
+      <p>Counter: {{ counterStore.counter }}</p>
     </v-main>
   </v-app>
 </template>
